@@ -5,8 +5,10 @@ using System.Collections.Generic;
 
 namespace Loans.Tests {
     [TestFixture]
+    //[Ignore("Need to complete update work.")]
     public class LoanTermShould {
         [Test]
+        //[Ignore("Need to complete update work.")]
         public void ReturnTermInMonths() {
             // Arrange, Act, Assert phases
 
@@ -19,7 +21,7 @@ namespace Loans.Tests {
             // Act
             //var NumberOfMonths = SUT.ToMonths();
 
-            //// Assert
+            // Assert
             //Assert.That(NumberOfMonths, Is.EqualTo(12));
         }
 
