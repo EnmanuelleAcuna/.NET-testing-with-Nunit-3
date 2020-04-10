@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Loans.Tests {
     [TestFixture]
-    [Category("Product comparison")]
+    [ProductComparison]
     public class MonthlyRepaymentComparisonShould {
         [Test]
         public void RespectValueEquality() {

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Loans.Tests {
     [TestFixture]
-    [Category("Product comparison")]
+    [ProductComparison]
     public class ProductComparerShould {
         private List<LoanProduct> Products;
         private ProductComparer SUT;
@@ -80,11 +80,13 @@ namespace Loans.Tests {
             //    Property("MonthlyRepayment").GreaterThan(0));
 
             // With lambda predicate
-            Assert.That(Comparisons, Has.Exactly(1)
-                .Matches<MonthlyRepaymentComparison>(
-                item => item.ProductName.Equals("a") &&
-                item.InterestRate == 1 &&
-                item.MonthlyRepayment > 0));
+            //Assert.That(Comparisons, Has.Exactly(1)
+            //    .Matches<MonthlyRepaymentComparison>(
+            //    item => item.ProductName.Equals("a") &&
+            //    item.InterestRate == 1 &&
+            //    item.MonthlyRepayment > 0));
+
+            Assert.That(Comparisons, Has.Exactly(1).Matches(new MonthlyRepaymentGreaterThanZeroConstraint("a", 1)));
         }
     }
 }
